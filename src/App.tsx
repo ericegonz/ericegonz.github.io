@@ -1,37 +1,26 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { ThemeProvider } from "@emotion/react";
 import "./App.css";
-import { Button } from "@mui/material";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
+import { themeOptions } from "./theme.mts";
+import { Box, Container, createTheme } from "@mui/material";
+import HeroParticles from "./components/Particles/Particles";
+import DefaultComponent from "./components/Default/Default";
+import Hero from "./components/Hero/Hero";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <Navbar></Navbar>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <Button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProvider theme={createTheme(themeOptions)}>
+      <Navbar />
+      <Box height={800}>
+        <Hero />
+        <HeroParticles />
+      </Box>
+      <Container sx={{ height: "800px", mt: "30px" }}>
+        <DefaultComponent />
+      </Container>
+      <Footer />
+    </ThemeProvider>
   );
 }
 
