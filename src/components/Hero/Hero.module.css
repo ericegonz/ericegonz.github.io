@@ -1,7 +1,6 @@
 .overlay{
     color: white;
     position: absolute;
-    top: 40%;
     left: 50%;
     margin: 0 auto;
     transform: translate(-50%,-50%);
