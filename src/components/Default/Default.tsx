@@ -3,7 +3,7 @@ import { useState } from "react";
 import reactLogo from "../../assets/react.svg";
 import viteLogo from "/vite.svg";
 
-function DefaultComponent() {
+const DefaultComponent = () => {
   const [count, setCount] = useState(0);
   return (
     <>
@@ -32,6 +32,6 @@ function DefaultComponent() {
       </p>
     </>
   );
-}
+};
 
 export default DefaultComponent;

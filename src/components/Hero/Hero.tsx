@@ -2,9 +2,12 @@ import { Box, Typography } from "@mui/material";
 import me from "../../assets/me.jpg";
 import styles from "./Hero.module.css";
 
-function Hero() {
+const Hero = () => {
   return (
-    <Box className={styles.overlay} sx={{ textAlign: "center" }}>
+    <Box
+      className={styles.overlay}
+      sx={{ textAlign: "center", top: { xs: "35vh", md: "35vh" } }}
+    >
       <img
         style={{ height: "290px", borderRadius: "50%", marginBottom: "20px" }}
         alt="Eric Gonzalez"
@@ -17,6 +20,6 @@ function Hero() {
       <Typography variant="subtitle1">graphic designer</Typography>
     </Box>
   );
-}
+};
 
 export default Hero;

@@ -1,6 +1,6 @@
 import { Box, Container, Paper, Typography } from "@mui/material";
 
-function Footer() {
+const Footer = () => {
   return (
     <Paper component="footer" square variant="outlined">
       <Container maxWidth="lg">
@@ -28,6 +28,6 @@ function Footer() {
       </Container>
     </Paper>
   );
-}
+};
 
 export default Footer;

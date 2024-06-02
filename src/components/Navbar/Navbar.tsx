@@ -13,7 +13,7 @@ import TerminalIcon from "@mui/icons-material/Terminal";
 
 const links = ["about", "experience", "contact"];
 
-function Logo() {
+const Logo = () => {
   return (
     <>
       <Box sx={{ mt: "4px" }}>
@@ -34,9 +34,9 @@ function Logo() {
       </Box>
     </>
   );
-}
+};
 
-function Navbar() {
+const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -139,5 +139,5 @@ function Navbar() {
       </Container>
     </AppBar>
   );
-}
+};
 export default Navbar;

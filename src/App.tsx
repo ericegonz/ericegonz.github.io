@@ -6,22 +6,24 @@ import { Box, Container, createTheme } from "@mui/material";
 import HeroParticles from "./components/Particles/Particles";
 import DefaultComponent from "./components/Default/Default";
 import Hero from "./components/Hero/Hero";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
+import Timeline from "./components/Timeline/Timeline";
 
-function App() {
+const App = () => {
   return (
     <ThemeProvider theme={createTheme(themeOptions)}>
       <Navbar />
-      <Box height={800}>
+      <Box sx={{ height: { xs: "60vh", md: "60vh" } }}>
         <Hero />
         <HeroParticles />
       </Box>
       <Container sx={{ height: "800px", mt: "30px" }}>
+        <Timeline />
         <DefaultComponent />
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
-}
+};
 
 export default App;
