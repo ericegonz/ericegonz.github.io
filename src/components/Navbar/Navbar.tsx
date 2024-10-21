@@ -10,8 +10,14 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import TerminalIcon from "@mui/icons-material/Terminal";
+import { Link } from "react-router-dom";
 
-const links = ["about", "experience", "contact"];
+const links = [
+  { label: "about", hashLink: "/#about" },
+  { label: "projects", hashLink: "/#projects" },
+  { label: "experience", hashLink: "/#work" },
+  { label: "contact", hashLink: "/#contact" },
+];
 
 const Logo = () => {
   return (
@@ -87,9 +93,11 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {links.map((link) => (
-                <MenuItem key={link} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{link}</Typography>
+              {links.map(({ label, hashLink }) => (
+                <MenuItem key={label} onClick={handleCloseNavMenu}>
+                  <Link to={hashLink} style={{ color: "unset" }}>
+                    <Typography textAlign="center">{label}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -110,9 +118,9 @@ const Navbar = () => {
             }}
           >
             <Logo />
-            {links.map((link) => (
+            {links.map(({ label, hashLink }) => (
               <Button
-                key={link}
+                key={label}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
@@ -121,7 +129,9 @@ const Navbar = () => {
                   textTransform: "lowercase",
                 }}
               >
-                {link}
+                <Link to={hashLink} style={{ color: "unset" }}>
+                  {label}
+                </Link>
               </Button>
             ))}
           </Box>
@@ -132,7 +142,12 @@ const Navbar = () => {
               color="secondary"
               sx={{ textTransform: "lowercase" }}
             >
-              Resume
+              <Link
+                style={{ color: "unset" }}
+                to="https://drive.google.com/file/d/1aM10tAyYcLHdz1toMGX1X9cXLzt8_ecT/view"
+              >
+                Resume
+              </Link>
             </Button>
           </Box>
         </Toolbar>

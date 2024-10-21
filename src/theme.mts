@@ -7,16 +7,49 @@ export const mainColors = {
 
 
 export const themeOptions: ThemeOptions = {
-    typography: {
-        fontFamily: "Montserrat"
-    },
     palette: {
-        mode: 'light',
         primary: {
-            main: mainColors.primary,
+            main: "#343A40", // Your primary color
+            contrastText: "#FFFFFF", // White text for contrast
         },
         secondary: {
-            main: mainColors.secondary,
+            main: "#143f72", // Your secondary color
+            contrastText: "#FFFFFF", // White text for contrast
+        },
+        error: {
+            main: "#f44336", // Red for error messages
+        },
+        warning: {
+            main: "#ff9800", // Orange for warnings
+        },
+        info: {
+            main: "#2196f3", // Blue for informational messages
+        },
+        success: {
+            main: "#4caf50", // Green for success messages
+        },
+        background: {
+            default: "#f2f2f2",
+            paper: "#ffffff",
+        },
+        text: {
+            primary: "#212529", // Dark gray text
+            secondary: "#6c757d", // Medium gray text
+        },
+    },
+    typography: {
+        fontFamily: "Montserrat",
+        h1: {
+            fontWeight: 600,
+            fontSize: "2.5rem",
+        },
+        h2: {
+            fontWeight: 600,
+            fontSize: "2rem",
+        },
+        body1: {
+            fontSize: "1rem",
+            lineHeight: 1.5,
         },
     },
 };

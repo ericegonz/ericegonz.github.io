@@ -22,7 +22,7 @@ const Footer = () => {
           }}
         >
           <Typography variant="caption" color="initial">
-            TODO
+            Eric Gonzalez
           </Typography>
         </Box>
       </Container>
