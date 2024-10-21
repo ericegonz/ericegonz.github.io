@@ -1,14 +1,21 @@
-import { VerticalTimelineElement } from "react-vertical-timeline-component";
-import { List, ListItem, Typography } from "@mui/material";
+import React from "react";
+import { Card, CardContent, Divider, Typography } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import SchoolIcon from "@mui/icons-material/School";
 import CodeIcon from "@mui/icons-material/Code";
 import { Experience, ExperienceType } from "./timeline-data.mts";
-import { mainColors } from "../../theme.mts";
+import {
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineOppositeContent,
+  TimelineSeparator,
+} from "@mui/lab";
+import TimelineAccordionExpand from "./TimelineAccordionExpand";
+import { formatDate, getRelativeDuration } from "../../utility/dates.mts";
 
-const { primary, secondary } = mainColors;
-
-type Props = {
+type TimelineElementProps = {
   type: ExperienceType;
   experience: Experience;
 };
@@ -24,41 +31,70 @@ const getIcon = (type: ExperienceType) => {
   }
 };
 
-const TimelineElement = ({ type, experience }: Props) => {
+const TimelineElement: React.FC<TimelineElementProps> = ({
+  type,
+  experience,
+}) => {
   const {
     dates,
+    dateStart,
+    dateEnd,
     title,
-    subtitle,
-    institution,
+    organization,
     location,
     briefDescription,
     bulletPoints,
   } = experience;
   return (
-    <VerticalTimelineElement
-      icon={getIcon(type)}
-      date={dates}
-      iconStyle={{ background: secondary, color: "white" }}
-      contentArrowStyle={{
-        borderRight: `7px solid ${primary}`,
-      }}
-      contentStyle={{
-        boxShadow: "0 0 13px #ccc",
-        padding: "2% 3%",
-      }}
-    >
-      <Typography variant="h6">{title}</Typography>
-      {subtitle && <Typography variant="subtitle1">{subtitle}</Typography>}
-      <Typography variant="subtitle2">
-        {institution} | {location}
-      </Typography>
-      <Typography variant="body2">{briefDescription}</Typography>
-      <List dense={true}>
-        {bulletPoints.map((bullet) => (
-          <ListItem>• {bullet}</ListItem>
-        ))}
-      </List>
-    </VerticalTimelineElement>
+    <TimelineItem>
+      <TimelineOppositeContent
+        sx={{ m: "auto 0" }}
+        variant="body2"
+        color="textSecondary"
+      >
+        <Typography variant="body1">
+          {dates
+            ? dates
+            : `${formatDate(dateStart!)} - ${
+                dateEnd ? formatDate(dateEnd) : "Present"
+              }`}
+        </Typography>
+        {dateStart && (
+          <Typography variant="body2" color="textSecondary">
+            {getRelativeDuration(dateStart, dateEnd)}
+          </Typography>
+        )}
+        <Typography variant="body2" color="textSecondary">
+          {location}
+        </Typography>
+      </TimelineOppositeContent>
+      <TimelineSeparator>
+        <TimelineConnector />
+        <TimelineDot color="primary">{getIcon(type)}</TimelineDot>
+        <TimelineConnector />
+      </TimelineSeparator>
+      <TimelineContent sx={{ py: 2, px: 2 }}>
+        <Card sx={{ p: 1 }}>
+          <CardContent>
+            <Typography variant="h6">{title}</Typography>
+            <Typography variant="subtitle1" color="textSecondary">
+              {organization}
+            </Typography>
+            {(briefDescription || bulletPoints.length != 0) && (
+              <Divider sx={{ mb: 1 }} />
+            )}
+            {briefDescription && (
+              <Typography variant="body1">{briefDescription}</Typography>
+            )}
+            {bulletPoints.length > 0 && (
+              <TimelineAccordionExpand
+                bulletPoints={bulletPoints}
+              ></TimelineAccordionExpand>
+            )}
+          </CardContent>
+        </Card>
+      </TimelineContent>
+    </TimelineItem>
   );
 };
 
