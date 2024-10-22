@@ -1,20 +1,5 @@
-export type ExperienceType = "code" | "education" | "generic";
+import { TimelineData } from "../components/Timeline/types.mts";
 
-export type Experience = {
-    title: string;
-    organization: string;
-    location: string;
-    briefDescription: string;
-    bulletPoints: string[];
-    dates?: string; // Optional string for dates
-    dateStart?: Date; // Optional date for start
-    dateEnd?: Date; // Optional date for end
-} & (
-        | { dates: string; dateStart?: never; dateEnd?: never } // If dates is provided
-        | { dateStart: Date; dateEnd?: Date; dates?: never }   // If dateStart and dateEnd are provided
-    );
-
-type TimelineData = Record<ExperienceType, Experience[]>;
 
 export const timelineData: TimelineData = {
     code: [

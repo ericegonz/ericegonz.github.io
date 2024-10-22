@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import { Link } from "react-router-dom";
+import { resumeUrl } from "../../content/navbar.data";
 
 const links = [
   { label: "about", hashLink: "/#about" },
@@ -67,7 +68,6 @@ const Navbar = () => {
           >
             <IconButton
               size="large"
-              aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -142,10 +142,7 @@ const Navbar = () => {
               color="secondary"
               sx={{ textTransform: "lowercase" }}
             >
-              <Link
-                style={{ color: "unset" }}
-                to="https://drive.google.com/file/d/1aM10tAyYcLHdz1toMGX1X9cXLzt8_ecT/view"
-              >
+              <Link style={{ color: "unset" }} to={resumeUrl}>
                 Resume
               </Link>
             </Button>
