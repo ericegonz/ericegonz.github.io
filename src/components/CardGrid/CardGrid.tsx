@@ -72,8 +72,8 @@ const CardGrid: React.FC<CardGridProps> = ({ items }) => {
       <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
         {selectedItem && (
           <>
-            <DialogTitle gutterBottom>
-              <Typography variant="h5">{selectedItem.title}</Typography>
+            <DialogTitle>
+              <Box>{selectedItem.title}</Box>
               {selectedItem.caption && (
                 <Typography variant="overline">
                   {selectedItem.caption}
@@ -85,6 +85,10 @@ const CardGrid: React.FC<CardGridProps> = ({ items }) => {
                 component="img"
                 sx={{
                   mb: 2,
+                  maxHeight: "30vh",
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
                 }}
                 alt={`Image showing ${selectedItem.title}`}
                 src={selectedItem.image}
