@@ -1,2 +1,2 @@
 export const resumeUrl =
-  "https://drive.google.com/file/d/1aM10tAyYcLHdz1toMGX1X9cXLzt8_ecT/view";
+  "https://www.linkedin.com/in/ericegonz/overlay/1723520717110/single-media-viewer/?profileId=ACoAABkPdj4BgGp27Ri7Rk28oGxQ43qA75VALiM";
