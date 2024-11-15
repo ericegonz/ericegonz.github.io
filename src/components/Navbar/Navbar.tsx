@@ -11,7 +11,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import TerminalIcon from "@mui/icons-material/Terminal";
-import GitHubMenu from "./GithubLinks";
+import GitHubLinks from "./GitHubLinks";
 import { resumeUrl } from "../../content/navbar.data";
 
 const links = [
@@ -136,7 +136,7 @@ const Navbar = () => {
             ))}
           </Box>
           <Box sx={{ mr: 2 }}>
-            <GitHubMenu />
+            <GitHubLinks />
           </Box>
           <Box>
             <Button
