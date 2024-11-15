@@ -30,7 +30,7 @@ export const aboutSections = [
   {
     title: "Languages & Frameworks",
     content:
-      "Proficient in TypeScript, JavaScript, and Python, with limited experience in C# and C++, as well as frameworks like Angular, Node.js, and React. Additionally, I have strong expertise in consuming and architecting GraphQL APIs. I've built Single Executable Applications in Node using tools like pkg, esbuild and Node SEA.",
+      "I am proficient in TypeScript, JavaScript, Python, and frameworks like Angular, Node.js, and React, with limited experience in C# and C++. Additionally, I have strong expertise in consuming and architecting GraphQL APIs. I've built Single Executable Applications in Node using tools like pkg, esbuild and Node SEA.",
     icons: [
       <TypescriptOriginal key="typescript" size={iconSize} />,
       <JavascriptOriginal key="javascript" size={iconSize} />,

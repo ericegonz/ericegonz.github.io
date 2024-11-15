@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,7 +11,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import TerminalIcon from "@mui/icons-material/Terminal";
-import { Link } from "react-router-dom";
+import GitHubMenu from "./GithubLinks";
 import { resumeUrl } from "../../content/navbar.data";
 
 const links = [
@@ -109,7 +110,6 @@ const Navbar = () => {
             </Box>
           </Box>
 
-          {/* Normal Screen */}
           <Box
             sx={{
               alignItems: "center",
@@ -135,11 +135,13 @@ const Navbar = () => {
               </Button>
             ))}
           </Box>
-
+          <Box sx={{ mr: 2 }}>
+            <GitHubMenu />
+          </Box>
           <Box>
             <Button
               variant="contained"
-              color="secondary"
+              color="info"
               sx={{ textTransform: "lowercase" }}
             >
               <Link style={{ color: "unset" }} to={resumeUrl}>
