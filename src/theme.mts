@@ -23,7 +23,7 @@ export const themeOptions: ThemeOptions = {
             main: "#ff9800", // Orange for warnings
         },
         info: {
-            main: "#2196f3", // Blue for informational messages
+            main: "#FFFFFF", // White for informational messages
         },
         success: {
             main: "#4caf50", // Green for success messages
