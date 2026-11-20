@@ -97,14 +97,13 @@ const Navbar = () => {
               {links.map(({ label, hashLink }) => (
                 <MenuItem key={label} onClick={handleCloseNavMenu}>
                   <Link to={hashLink} style={{ color: "unset" }}>
-                    <Typography textAlign="center">{label}</Typography>
+                    <Typography align="center">{label}</Typography>
                   </Link>
                 </MenuItem>
               ))}
             </Menu>
             <Box
-              width={"100%"}
-              sx={{ display: "flex", justifyContent: "center" }}
+              sx={{ width: "100%", display: "flex", justifyContent: "center" }}
             >
               <Logo />
             </Box>

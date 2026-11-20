@@ -17,11 +17,13 @@ const About = () => {
             {section.content}
           </Typography>
           <Stack
-            sx={{ mt: 3 }}
             direction="row"
             spacing={2}
-            justifyContent="center"
-            alignItems="center"
+            sx={{
+              mt: 3,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
             {section.icons}
           </Stack>

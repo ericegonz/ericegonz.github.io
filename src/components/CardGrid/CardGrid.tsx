@@ -43,9 +43,9 @@ const CardGrid: React.FC<CardGridProps> = ({ items }) => {
 
   return (
     <>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
         {items.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
             <Card
               onClick={() => handleClickOpen(item)}
               style={{ cursor: "pointer", height: "100%" }}

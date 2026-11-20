@@ -29,9 +29,11 @@ const GitHubMenu = () => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleMouseLeave}
-        MenuListProps={{
-          onMouseEnter: () => setAnchorEl(anchorEl),
-          onMouseLeave: handleMouseLeave,
+        slotProps={{
+          list: {
+            onMouseEnter: () => setAnchorEl(anchorEl),
+            onMouseLeave: handleMouseLeave,
+          },
         }}
       >
         {githubAccounts.map(({ href, label }) => (
