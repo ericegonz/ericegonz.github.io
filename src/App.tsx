@@ -1,6 +1,4 @@
 import { ThemeProvider } from "@emotion/react";
-// @ts-expect-error -- TODO create a d.ts file here
-import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { themeOptions } from "./theme.mts";
@@ -23,7 +21,6 @@ const App = () => {
   return (
     <ThemeProvider theme={createTheme(themeOptions)}>
       <CssBaseline />
-      <ScrollToHashElement behavior="smooth" />
       <Navbar />
       <Box id="about" sx={{ height: { xs: "60vh", md: "60vh" } }}>
         <Hero />
