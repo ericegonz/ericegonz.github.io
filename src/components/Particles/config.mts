@@ -25,13 +25,6 @@ export const particleConfig: ISourceOptions = {
             random: true,
             straight: false,
             outModes: "bounce",
-            attract: {
-                enable: false,
-                rotate: {
-                    x: 400,
-                    y: 1200,
-                },
-            },
         },
         number: {
             value: 225,

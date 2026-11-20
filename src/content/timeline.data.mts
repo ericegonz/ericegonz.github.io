@@ -8,6 +8,7 @@ export const timelineData: TimelineData = {
             organization: "Thermo Fisher Scientific",
             location: "Carlsbad, CA",
             dateStart: new Date('2021-04-01'),
+            dateEnd: new Date('2026-03-31'),
             briefDescription:
                 "Developed tools for field teams to validate PCR instruments and created software and SDKs for on-instrument telemetry transmission to the cloud, enhancing remote resolution and customer uptime. Also designed tools that enabled service and contract sales teams to collect payment information online and target low-value customers, improving outreach efficiency.",
             bulletPoints: [
@@ -20,6 +21,23 @@ export const timelineData: TimelineData = {
                 "Work with R&D instrument teams to align on service data standards and expectations for new instruments and software releases.",
                 "Trusted as the technical Voice of Customer for GSS, bridging gaps between external technical teams and our division."
 
+            ],
+        },
+        {
+            title: "Staff Software Engineer",
+            organization: "Thermo Fisher Scientific",
+            location: "Carlsbad, CA",
+            dateStart: new Date('2026-04-01'),
+            briefDescription:
+                "Technical lead for the Service Sales team's AI-enabled application, architecting an agentic workflow connected to a custom MCP server while managing a cross-disciplinary engineering team.",
+            bulletPoints: [
+                "Lead design and architecture for an AI-enabled application with agentic workflows connected to a custom MCP server for cross-system data aggregation.",
+                "Manage and mentor a cross-disciplinary team from junior engineers to staff, including QA.",
+                "Partner with business stakeholders to translate strategic goals into technical requirements.",
+                "Present technical roadmaps, risk assessments, and progress updates to senior leadership.",
+                "Lead engineering teams through full project lifecycles, from requirements gathering to delivery.",
+                "Drive engineering best practices across the team, including code quality standards, automated testing strategies, and technical debt reduction initiatives.",
+                "Serve as the technical Voice of Customer for the Service Sales division, bridging gaps between business stakeholders and engineering teams.",
             ],
         },
         {
